@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+         /* About Section Styles */
+         .about-section {
+            padding: 4rem 2rem;
+            background: transparent;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, #a855f7, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-description {
+            color: #d1d5db;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .about-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 9999px;
+            background: linear-gradient(90deg, #a855f7, #9333ea);
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+        }
+
+        .about-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.6);
+        }
+
+        .about-button i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .about-button:hover i {
+            transform: translateX(5px);
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .image-container {
+            background: rgba(168, 85, 247, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .code-badge {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #a855f7, #7e22ce);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(168, 85, 247, 0.5);
+            z-index: 1;
+        }
+
+        .code-badge i {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-text, .about-image {
+                min-width: 100%;
+            }
+            
+            .about-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</style>
+<body>
+    <!-- About Me Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <!-- Text Content -->
+                <div class="about-text">
+                    <h2 class="about-title">About Me</h2>
+                    
+                    <p class="about-description">
+                        I'm a passionate developer with expertise in Flutter and Full Stack development. 
+                        With a strong foundation in computer science and hands-on experience in building 
+                        scalable applications, I bridge the gap between technical implementation and 
+                        user-centric design. My approach combines analytical problem-solving with 
+                        creative thinking to deliver innovative solutions.
+                    </p>
+                    
+                    <p class="about-description">
+                        When I'm not coding, you'll find me exploring new technologies, contributing to 
+                        open-source projects, or mentoring aspiring developers. I believe in continuous 
+                        learning and staying at the forefront of technological advancements.
+                    </p>
+                    
+                    <a href="about.html" class="about-button">
+                        Know More About Me
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Image -->
+                <div class="about-image">
+                    <div class="image-container">
+                        <img 
+                            src="https://png.pngtree.com/png-vector/20240309/ourmid/pngtree-developers-are-coding-programs-on-computers-programmers-are-analyzing-data-png-image_11902650.png" 
+                            alt="Developer working on code"
+                        >
+                    </div>
+                    <div class="code-badge">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

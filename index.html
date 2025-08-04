@@ -866,6 +866,59 @@
                 font-size: 2rem;
             }
         }
+
+        /* Mobile-specific styles for About Me toggle */
+        .about-content-mobile {
+            display: none;
+        }
+
+        .about-content-desktop {
+            display: block;
+        }
+
+        @media (max-width: 767px) {
+            .about-content-mobile {
+                display: block;
+            }
+            
+            .about-content-desktop {
+                display: none;
+            }
+            
+            .read-more-btn,
+            .see-less-btn {
+                background: linear-gradient(90deg, #a855f7, #9333ea);
+                color: white;
+                border: none;
+                padding: 8px 16px;
+                border-radius: 20px;
+                cursor: pointer;
+                font-size: 0.9rem;
+                margin-top: 10px;
+                transition: all 0.3s ease;
+                font-family: 'Poppins', sans-serif;
+            }
+            
+            .read-more-btn:hover,
+            .see-less-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+            }
+            
+            .about-extra-content {
+                margin-top: 1rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .about-content-mobile {
+                display: none !important;
+            }
+            
+            .about-content-desktop {
+                display: block !important;
+            }
+        }
     </style>
   </head>
   <body>
@@ -937,17 +990,22 @@ I love solving problems, learning new technologies, and taking on new challenges
                     <h2 class="about-title">About Me</h2>
                     
                     <p class="about-description">
-                        I'm a passionate developer with expertise in App and Full Stack development. 
-                        With a strong foundation in computer science and hands-on experience in building 
-                        scalable applications, I bridge the gap between technical implementation and 
-                        user-centric design. My approach combines analytical problem-solving with 
-                        creative thinking to deliver innovative solutions.
+                      I'm a passionate full-stack and mobile app developer who transforms complex problems 
+                      into elegant digital solutions. With hands-on expertise across the entire development 
+                      stack, I build scalable, user-friendly applications that merge technical precision 
+                      with intuitive design.
                     </p>
                     
                     <p class="about-description">
-                        When I'm not coding, you'll find me exploring new technologies, contributing to 
-                        open-source projects, or mentoring aspiring developers. I believe in continuous 
-                        learning and staying at the forefront of technological advancements.
+                      My approach blends analytical thinking with creative problem-solving—whether architecting 
+                      resilient backend systems or designing seamless front-end interfaces. I thrive in fast-paced 
+                      environments where innovation and code come together.
+                    </p>
+
+                    <p class="about-description">
+                      Outside of development, I actively contribute to open-source, explore emerging technologies, 
+                      and enjoy mentoring aspiring developers. I’m always excited to take on new challenges that 
+                      push boundaries and create real-world impact.
                     </p>
                     
                     <a href="about.html" class="about-button">
@@ -1077,10 +1135,11 @@ I love solving problems, learning new technologies, and taking on new challenges
                       <p>An interactive web-based platform designed to streamline student event coordination. It automates participant registration, dynamically assigns teams, enables question distribution, allows file-based answer submissions, and features a live leaderboard for real-time score tracking.Built for MBA dept for event management</p>
                       
                       <div class="project-tech">
-                          <span class="tech-tag">React</span>
-                          <span class="tech-tag">Node.js</span>
-                          <span class="tech-tag">MongoDB</span>
-                          <span class="tech-tag">Chart.js</span>
+                          <span class="tech-tag">html</span>
+                          <span class="tech-tag">css</span> 
+                          <span class="tech-tag">Tailwind </span>
+                          <span class="tech-tag">node.js/Express.js</span>
+                          <span class="tech-tag">Mongodb</span>
                       </div>
                       
                       <div class="project-links">

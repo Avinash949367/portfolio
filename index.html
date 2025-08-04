@@ -721,6 +721,35 @@
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s, box-shadow 0.3s;
             color: white;
+            position: relative;
+        }
+
+        .client-stamp {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: linear-gradient(45deg, #ff00ff, #ff0066);
+            color: white;
+            padding: 10px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            transform: rotate(30deg);
+            z-index: 1;
+            transition: transform 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: rotate(30deg) scale(1);
+            }
+            50% {
+                transform: rotate(30deg) scale(1.1);
+            }
+            100% {
+                transform: rotate(30deg) scale(1);
+            }
         }
         
         .project-card:hover {
@@ -1088,13 +1117,16 @@ I love solving problems, learning new technologies, and taking on new challenges
                       Outside of development, I actively contribute to open-source, explore emerging technologies, 
                       and enjoy mentoring aspiring developers. I’m always excited to take on new challenges that 
                       push boundaries and create real-world impact.
-                    </p>
-                    
-                    <a href="about.html" class="about-button">
+                      <br><br>
+                      <a href="about.html" class="about-button">
                         Know More
                         <i class="fas fa-arrow-right"></i>
                     </a>
+                    </p>
+                    
+                    
                 </div>
+                
                 
                 <!-- Image -->
                 <div class="about-image">
@@ -1209,12 +1241,13 @@ I love solving problems, learning new technologies, and taking on new challenges
           <div class="projects-grid">
               <!-- Project 1 -->
               <div class="project-card">
+                  <div class="client-stamp">Client-Based</div>
                   <div class="project-image">
                       <img src="https://www.qceventplanning.com/blog/wp-content/uploads/2020/05/Copy-of-Event-In-Post-Event-Logo-Overlay-135x135-40.png" alt="E-commerce Dashboard">
                   </div>
                   <div class="project-content">
                       <h3 style="display: inline-block; margin-right: 10px;">Event Management System</h3>
-                      <p>An interactive web-based platform designed to streamline student event coordination. It automates participant registration, dynamically assigns teams, enables question distribution, allows file-based answer submissions, and features a live leaderboard for real-time score tracking.Built for MBA dept for event management</p>
+                      <p>An interactive <strong style="color: red;">CLIENT-BASED</strong> web platform designed to streamline student event coordination. It automates participant registration, dynamically assigns teams, enables question distribution, allows answer submissions, and features a live leaderboard for real-time score tracking.Built for MBA dept for Boosttrap Event</p>
                       
                       <div class="project-tech">
                           <span class="tech-tag">html</span>

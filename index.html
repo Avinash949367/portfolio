@@ -502,7 +502,7 @@
   border: none;
   color: white;
   cursor: pointer;
-  margin-right: 50px;
+  margin-right: 0px;
 }
 
 @media (max-width: 767px) {
@@ -1028,6 +1028,155 @@
                 display: block !important;
             }
         }
+
+        .contact-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+  
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto 50px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #4a90e2;
+    outline: none;
+  }
+  
+  .submit-btn {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #3a7bc8;
+  }
+  
+  .contact-info {
+    text-align: center;
+  }
+  
+  .contact-info h3 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .contact-info ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .contact-info a {
+    color: #4a90e2;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .contact-info a:hover {
+    color: #3a7bc8;
+  }
+  
+  .contact-info i {
+    font-size: 1.2rem;
+    color: #666;
+  }
+
+  /* Previous CSS remains the same, just add these new styles at the end */
+
+.whatsapp-cta {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.whatsapp-cta p {
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.whatsapp-btn:hover {
+  background-color: #128C7E;
+}
+
+.whatsapp-btn i {
+  font-size: 1.2rem;
+}
     </style>
   </head>
   <body>
@@ -1313,6 +1462,62 @@ I love solving problems, learning new technologies, and taking on new challenges
       </div>
   </section>
     
+
+  <section id="contact" class="contact-section" style="background-color: transparent; padding: 80px 0;">
+    <div class="container">
+      <h2 class="section-title" style="background: linear-gradient(90deg, #a855f7, #9333ea, #7e22ce); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.5rem; font-weight: 700; margin-bottom: 15px;">Get In Touch</h2>
+      <p class="section-subtitle" style="color: #d1d5db; font-size: 1.1rem; max-width: 600px; margin: 0 auto 40px;">Have a project in mind or want to collaborate? Let's create something amazing together!</p>
+      
+      <form id="contact-form" class="contact-form" action="#" method="POST" style="max-width: 600px; margin: 0 auto 50px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);">
+        <div class="form-group" style="margin-bottom: 25px;">
+          <label for="name" style="display: block; margin-bottom: 8px; font-weight: 500; color: #a855f7; font-size: 1rem;">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name" style="width: 100%; padding: 15px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 10px; font-size: 1rem; color: white; transition: all 0.3s ease;">
+        </div>
+        
+        <div class="form-group" style="margin-bottom: 25px;">
+          <label for="email" style="display: block; margin-bottom: 8px; font-weight: 500; color: #a855f7; font-size: 1rem;">Email</label>
+          <input type="email" id="email" name="email" required placeholder="your.email@example.com" style="width: 100%; padding: 15px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 10px; font-size: 1rem; color: white; transition: all 0.3s ease;">
+        </div>
+        
+        <div class="form-group" style="margin-bottom: 25px;">
+          <label for="subject" style="display: block; margin-bottom: 8px; font-weight: 500; color: #a855f7; font-size: 1rem;">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="What's this about?" style="width: 100%; padding: 15px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 10px; font-size: 1rem; color: white; transition: all 0.3s ease;">
+        </div>
+        
+        <div class="form-group" style="margin-bottom: 30px;">
+          <label for="message" style="display: block; margin-bottom: 8px; font-weight: 500; color: #a855f7; font-size: 1rem;">Message</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project..." style="width: 100%; padding: 15px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 10px; font-size: 1rem; color: white; transition: all 0.3s ease; resize: vertical; min-height: 150px;"></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn" style="width: 100%; background: linear-gradient(90deg, #a855f7, #9333ea); color: white; border: none; padding: 15px 30px; font-size: 1.1rem; font-weight: 600; border-radius: 9999px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);">Send Message</button>
+      </form>
+      
+      <div class="contact-info" style="text-align: center; margin-top: 50px;">
+        <h3 style="color: #a855f7; margin-bottom: 30px; font-size: 1.5rem;">Or connect with me</h3>
+        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+          <a href="mailto:davinash464792gmail.com" style="display: inline-flex; align-items: center; gap: 10px; color: white; text-decoration: none; padding: 12px 24px; background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 9999px; transition: all 0.3s ease;">
+            <i class="fas fa-envelope" style="font-size: 1.2rem;"></i>
+            <span>Email Me</span>
+          </a>
+          
+          <a href="https://wa.me/yourphonenumber" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; color: white; text-decoration: none; padding: 12px 24px; background: rgba(37, 211, 102, 0.15); border: 1px solid rgba(37, 211, 102, 0.3); border-radius: 9999px; transition: all 0.3s ease;">
+            <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i>
+            <span>WhatsApp</span>
+          </a>
+          
+          <a href="https://linkedin.com/in/your-linkedin-profile" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; color: white; text-decoration: none; padding: 12px 24px; background: rgba(0, 119, 181, 0.15); border: 1px solid rgba(0, 119, 181, 0.3); border-radius: 9999px; transition: all 0.3s ease;">
+            <i class="fab fa-linkedin" style="font-size: 1.2rem;"></i>
+            <span>LinkedIn</span>
+          </a>
+          
+          <a href="https://github.com/your-github-profile" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; color: white; text-decoration: none; padding: 12px 24px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 9999px; transition: all 0.3s ease;">
+            <i class="fab fa-github" style="font-size: 1.2rem;"></i>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
    
 
    

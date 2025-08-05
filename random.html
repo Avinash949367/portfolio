@@ -6,177 +6,192 @@
     <title>Document</title>
 </head>
 <style>
-         /* About Section Styles */
-         .about-section {
-            padding: 4rem 2rem;
-            background: transparent;
-        }
+.contact-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+  
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto 50px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #4a90e2;
+    outline: none;
+  }
+  
+  .submit-btn {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #3a7bc8;
+  }
+  
+  .contact-info {
+    text-align: center;
+  }
+  
+  .contact-info h3 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .contact-info ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .contact-info a {
+    color: #4a90e2;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .contact-info a:hover {
+    color: #3a7bc8;
+  }
+  
+  .contact-info i {
+    font-size: 1.2rem;
+    color: #666;
+  }
 
-        .about-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+  /* Previous CSS remains the same, just add these new styles at the end */
 
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 3rem;
-        }
+.whatsapp-cta {
+  text-align: center;
+  margin-top: 30px;
+}
 
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
+.whatsapp-cta p {
+  margin-bottom: 15px;
+  color: #666;
+}
 
-        .about-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(90deg, #a855f7, #9333ea);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
 
-        .about-description {
-            color: #d1d5db;
-            line-height: 1.7;
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
+.whatsapp-btn:hover {
+  background-color: #128C7E;
+}
 
-        .about-button {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 9999px;
-            background: linear-gradient(90deg, #a855f7, #9333ea);
-            color: white;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
-        }
-
-        .about-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.6);
-        }
-
-        .about-button i {
-            margin-left: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .about-button:hover i {
-            transform: translateX(5px);
-        }
-
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-            position: relative;
-        }
-
-        .image-container {
-            background: rgba(168, 85, 247, 0.1);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(168, 85, 247, 0.2);
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .image-container:hover {
-            transform: translateY(-5px);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-
-        .code-badge {
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #a855f7, #7e22ce);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 5px 15px rgba(168, 85, 247, 0.5);
-            z-index: 1;
-        }
-
-        .code-badge i {
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .about-text, .about-image {
-                min-width: 100%;
-            }
-            
-            .about-title {
-                font-size: 2rem;
-            }
-        }
-    </style>
+.whatsapp-btn i {
+  font-size: 1.2rem;
+}
 </style>
 <body>
-    <!-- About Me Section -->
-    <section class="about-section">
-        <div class="about-container">
-            <div class="about-content">
-                <!-- Text Content -->
-                <div class="about-text">
-                    <h2 class="about-title">About Me</h2>
-                    
-                    <p class="about-description">
-                        I'm a passionate developer with expertise in Flutter and Full Stack development. 
-                        With a strong foundation in computer science and hands-on experience in building 
-                        scalable applications, I bridge the gap between technical implementation and 
-                        user-centric design. My approach combines analytical problem-solving with 
-                        creative thinking to deliver innovative solutions.
-                    </p>
-                    
-                    <p class="about-description">
-                        When I'm not coding, you'll find me exploring new technologies, contributing to 
-                        open-source projects, or mentoring aspiring developers. I believe in continuous 
-                        learning and staying at the forefront of technological advancements.
-                    </p>
-                    
-                    <a href="about.html" class="about-button">
-                        Know More About Me
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                
-                <!-- Image -->
-                <div class="about-image">
-                    <div class="image-container">
-                        <img 
-                            src="https://png.pngtree.com/png-vector/20240309/ourmid/pngtree-developers-are-coding-programs-on-computers-programmers-are-analyzing-data-png-image_11902650.png" 
-                            alt="Developer working on code"
-                        >
-                    </div>
-                    <div class="code-badge">
-                        <i class="fas fa-code"></i>
-                    </div>
-                </div>
+    <section id="contact" class="contact-section">
+        <div class="container">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">Have a project in mind or want to collaborate? Send me a message!</p>
+          
+          <form id="contact-form" class="contact-form" action="#" method="POST">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
             </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What's this about?">
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required placeholder="Your message here..."></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+          
+          <div class="whatsapp-cta">
+            <p>Prefer WhatsApp? Chat with me directly:</p>
+            <a href="https://wa.me/yourphonenumber" class="whatsapp-btn" target="_blank">
+              <i class="fab fa-whatsapp"></i> Message on WhatsApp
+            </a>
+          </div>
         </div>
-    </section>
+      </section>
 </body>
 </html>

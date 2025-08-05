@@ -1,0 +1,1 @@
+uses formspree for contact form submission with data transfor to the mail 

@@ -6,190 +6,264 @@
     <title>Document</title>
 </head>
 <style>
-.contact-section {
-    padding: 80px 0;
-    background-color: #f9f9f9;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    color: #333;
-  }
-  
-  .section-subtitle {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #666;
-    max-width: 600px;
-    margin: 0 auto 40px;
-  }
-  
-  .contact-form {
-    max-width: 600px;
-    margin: 0 auto 50px;
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: #444;
-  }
-  
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: border-color 0.3s;
-  }
-  
-  .form-group input:focus,
-  .form-group textarea:focus {
-    border-color: #4a90e2;
-    outline: none;
-  }
-  
-  .submit-btn {
-    background-color: #4a90e2;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .submit-btn:hover {
-    background-color: #3a7bc8;
-  }
-  
-  .contact-info {
-    text-align: center;
-  }
-  
-  .contact-info h3 {
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .contact-info ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .contact-info li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .contact-info a {
-    color: #4a90e2;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .contact-info a:hover {
-    color: #3a7bc8;
-  }
-  
-  .contact-info i {
-    font-size: 1.2rem;
-    color: #666;
-  }
+.experience-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
 
-  /* Previous CSS remains the same, just add these new styles at the end */
-
-.whatsapp-cta {
+.section-title {
   text-align: center;
-  margin-top: 30px;
-}
-
-.whatsapp-cta p {
+  font-size: 2.5rem;
   margin-bottom: 15px;
+  color: #333;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
   color: #666;
+  max-width: 600px;
+  margin: 0 auto 50px;
 }
 
-.whatsapp-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #25D366;
-  color: white;
-  padding: 12px 25px;
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: #4a90e2;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.timeline-item {
+  padding: 20px 0;
+  position: relative;
+}
+
+.timeline-content {
+  width: 45%;
+  padding: 25px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-left: 55%;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-right: 55%;
+  margin-left: 0;
+}
+
+.timeline-content::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  top: 30px;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::after {
+  left: -15px;
+  border-width: 15px 15px 15px 0;
+  border-color: transparent #f9f9f9 transparent transparent;
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+  right: -15px;
+  left: auto;
+  border-width: 15px 0 15px 15px;
+  border-color: transparent transparent transparent #f9f9f9;
+}
+
+.timeline-header {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 10px;
+}
+
+.job-title {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.company {
+  display: inline-block;
+  font-weight: 600;
+  color: #4a90e2;
+  margin-bottom: 5px;
+  background: rgba(74, 144, 226, 0.1);
+  padding: 3px 8px;
   border-radius: 4px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.3s;
 }
 
-.whatsapp-btn:hover {
-  background-color: #128C7E;
+.date {
+  display: block;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-style: italic;
+  margin-top: 5px;
 }
 
-.whatsapp-btn i {
-  font-size: 1.2rem;
+.job-description {
+  padding-left: 20px;
+  color: #555;
+}
+
+.job-description li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  position: relative;
+}
+
+.job-description li:before {
+  content: '•';
+  color: #4a90e2;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  position: absolute;
+}
+
+.nested-list {
+  margin-top: 8px;
+  padding-left: 20px;
+  list-style-type: circle;
+}
+
+.nested-list li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.nested-list li:before {
+  content: none;
+}
+
+/* Highlight keywords */
+strong, em {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+em {
+  color: #e74c3c;
+  font-style: normal;
+}
+
+/* Timeline dot */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #4a90e2;
+  border: 3px solid #fff;
+  left: 50%;
+  margin-left: -9px;
+  top: 30px;
+  z-index: 1;
+  box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2);
+}
+
+/* Club role specific styling */
+.timeline-item.club-role .timeline-content {
+  border-left: 4px solid #8e44ad;
+  background: #f8f0fc;
+}
+
+.timeline-item.club-role::before {
+  background-color: #8e44ad;
+  box-shadow: 0 0 0 4px rgba(142, 68, 173, 0.2);
+}
+
+.timeline-item.club-role .job-title {
+  color: #8e44ad;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 30px;
+  }
+  
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    width: calc(100% - 80px);
+    margin-left: 80px;
+  }
+  
+  .timeline-item::before {
+    left: 30px;
+  }
+  
+  .timeline-item:nth-child(odd) .timeline-content::after,
+  .timeline-item:nth-child(even) .timeline-content::after {
+    left: -15px;
+    border-width: 15px 15px 15px 0;
+    border-color: transparent #f9f9f9 transparent transparent;
+  }
+  
+  .timeline-item.club-role .timeline-content {
+    border-left: none;
+    border-top: 4px solid #8e44ad;
+  }
 }
 </style>
 <body>
-    <section id="contact" class="contact-section">
+    <section id="experience" class="experience-section">
         <div class="container">
-          <h2 class="section-title">Get In Touch</h2>
-          <p class="section-subtitle">Have a project in mind or want to collaborate? Send me a message!</p>
+          <h2 class="section-title">Professional Experience</h2>
+          <p class="section-subtitle">My career journey and professional milestones</p>
           
-          <form id="contact-form" class="contact-form" action="#" method="POST">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required placeholder="Your name">
-            </div>
-            
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-            </div>
-            
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="What's this about?">
-            </div>
-            
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="6" required placeholder="Your message here..."></textarea>
-            </div>
-            
-            <button type="submit" class="submit-btn">Send Message</button>
-          </form>
-          
-          <div class="whatsapp-cta">
-            <p>Prefer WhatsApp? Chat with me directly:</p>
-            <a href="https://wa.me/yourphonenumber" class="whatsapp-btn" target="_blank">
-              <i class="fab fa-whatsapp"></i> Message on WhatsApp
-            </a>
+          <div class="timeline">
+            <!-- Enhanced Experience Item 1 -->
+            <div class="timeline-item club-role">
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <h3 class="job-title">Tech Team Lead & Full-Stack Developer</h3>
+                    <span class="company">CBDA Club</span>
+                    <span class="company">PES UNIVERSITY</span>
+                    <span class="date">Aug 2024 - Present (1 year)</span>
+                  </div>
+                  <ul class="job-description">
+                    <li>
+                      <strong>Designed and developed</strong> a comprehensive <strong>Event Management System</strong> using <em>Node.js</em>, <em>MongoDB</em>, and <em>Tailwind CSS</em> that:
+                      <ul class="nested-list">
+                        <li>Automated <strong>participant registration</strong> and <strong>dynamic team assignments</strong></li>
+                        <li>Enabled <strong>real-time Q/A</strong> and <strong>submission tracking</strong></li>
+                        <li>Featured a <strong>live leaderboard</strong> with score updates</li>
+                      </ul>
+                    </li>
+                    <li><strong>Successfully deployed</strong> for MBA Department's <em>"Boosttrap"</em> event, handling <strong>300+ participants</strong> with 99% uptime.</li>
+                    <li><strong>Organized an hackathons</strong> as technical coordinator, leading a team of 5 developers.</li>
+                    <li><strong>Reduced manual work</strong> by 70% through process automation and digital solutions.</li>
+                  </ul>
+                </div>
+              </div>
           </div>
         </div>
       </section>

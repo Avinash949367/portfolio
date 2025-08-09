@@ -2143,6 +2143,32 @@ function toggleMenu() {
     const navLinks = document.getElementById("nav-links");
     navLinks.classList.toggle("show");
   } 
+        </script>
+
+    <script>
+      // Mobile email link fallback
+      document.addEventListener('DOMContentLoaded', function () {
+        const emailLink = document.querySelector('a[aria-label="Send Email"]');
+        if (!emailLink) return;
+
+        emailLink.addEventListener('click', function (e) {
+          const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+          if (!isMobile) return; // Only apply on mobile devices
+
+          e.preventDefault();
+
+          const mailto = emailLink.getAttribute('href');
+          // Try to open native email app
+          window.location.href = mailto;
+
+          // Fallback: after short delay, open Gmail web in new tab
+          setTimeout(() => {
+            const emailAddress = mailto.replace('mailto:', '');
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}`;
+            window.open(gmailUrl, '_blank');
+          }, 500);
+        });
+      });
     </script>
 
     <!-- Mobile About Toggle Script -->

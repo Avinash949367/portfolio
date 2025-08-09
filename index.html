@@ -2146,26 +2146,37 @@ function toggleMenu() {
         </script>
 
     <script>
-      // Mobile email link fallback
+      // Best-effort dynamic email app opener for mobile
       document.addEventListener('DOMContentLoaded', function () {
         const emailLink = document.querySelector('a[aria-label="Send Email"]');
         if (!emailLink) return;
 
         emailLink.addEventListener('click', function (e) {
-          const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+          const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+          const isMobile = /iPhone|iPad|iPod|Android/i.test(userAgent);
           if (!isMobile) return; // Only apply on mobile devices
 
           e.preventDefault();
 
           const mailto = emailLink.getAttribute('href');
-          // Try to open native email app
+          const emailAddress = mailto.replace('mailto:', '');
+
+          // Try mailto first
           window.location.href = mailto;
 
-          // Fallback: after short delay, open Gmail web in new tab
+          // After short delay, try app-specific URL schemes
           setTimeout(() => {
-            const emailAddress = mailto.replace('mailto:', '');
-            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}`;
-            window.open(gmailUrl, '_blank');
+            if (/android/i.test(userAgent)) {
+              // Try Gmail app URL scheme for Android
+              window.location.href = `googlegmail:///co?to=${encodeURIComponent(emailAddress)}`;
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+              // Try Apple Mail app URL scheme for iOS
+              window.location.href = `message://%3C${encodeURIComponent(emailAddress)}%3E`;
+            } else {
+              // Fallback to Gmail web in new tab
+              const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}`;
+              window.open(gmailUrl, '_blank');
+            }
           }, 500);
         });
       });

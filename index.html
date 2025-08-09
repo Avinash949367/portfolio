@@ -2230,9 +2230,21 @@ function toggleMenu() {
 
         androidBtn.addEventListener('click', function () {
           const mailto = emailLink.getAttribute('href');
-          // Use mailto link directly for Android to open default email app
-          window.location.href = mailto;
+          const emailAddress = mailto.replace('mailto:', '');
           modal.style.display = 'none';
+
+          // Try to open Gmail app using iframe trick
+          const iframe = document.createElement('iframe');
+          iframe.style.display = 'none';
+          iframe.src = `googlegmail:///co?to=${encodeURIComponent(emailAddress)}`;
+          document.body.appendChild(iframe);
+
+          // Fallback: after 2 seconds, open Gmail web in new tab
+          setTimeout(() => {
+            document.body.removeChild(iframe);
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}`;
+            window.open(gmailUrl, '_blank');
+          }, 2000);
         });
       });
     </script>

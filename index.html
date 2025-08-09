@@ -2231,7 +2231,8 @@ function toggleMenu() {
         androidBtn.addEventListener('click', function () {
           const mailto = emailLink.getAttribute('href');
           const emailAddress = mailto.replace('mailto:', '');
-          window.location.href = `googlegmail:///co?to=${encodeURIComponent(emailAddress)}`;
+          // Use Android intent URL scheme for Gmail app
+          window.location.href = `intent://compose?to=${encodeURIComponent(emailAddress)}#Intent;package=com.google.android.gm;end`;
           modal.style.display = 'none';
         });
       });

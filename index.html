@@ -1681,9 +1681,9 @@ I love solving problems, learning new technologies, and taking on new challenges
           <a href="https://www.linkedin.com/in/avinash-d-bb5182320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" aria-label="LinkedIn" style="margin-right: 1rem; font-size: 1.5rem;">
             <i class="fab fa-linkedin"></i>
           </a>
-          <a href="https://mail.google.com/mail/?view=cm&to=davinash46479@gmail.com" target="_blank" 
-   aria-label="Send Email" style="font-size: 1.5rem;">
-    <i class="fas fa-envelope"></i></a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=davinash46479@gmail.com" target="_blank" aria-label="Send Email" style="font-size: 1.5rem;">
+            <i class="fas fa-envelope"></i>
+          </a>
         </div>
         <a href="#" class="resume" style="border: 1px solid black; background-color: #a855f7">view Resume</a>
       </div>
@@ -2146,107 +2146,14 @@ function toggleMenu() {
         </script>
 
     <script>
-      // Best-effort dynamic email app opener for mobile
-      document.addEventListener('DOMContentLoaded', function () {
-        const emailLink = document.querySelector('a[aria-label="Send Email"]');
-        if (!emailLink) return;
-
-        emailLink.addEventListener('click', function (e) {
-          const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-          const isMobile = /iPhone|iPad|iPod|Android/i.test(userAgent);
-          if (!isMobile) return; // Only apply on mobile devices
-
-          e.preventDefault();
-
-          const mailto = emailLink.getAttribute('href');
-          const emailAddress = mailto.replace('mailto:', '');
-
-          // Try mailto first
-          window.location.href = mailto;
-
-          // After short delay, try app-specific URL schemes
-          setTimeout(() => {
-            if (/android/i.test(userAgent)) {
-              // Try Gmail app URL scheme for Android
-              window.location.href = `googlegmail:///co?to=${encodeURIComponent(emailAddress)}`;
-            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-              // Try Apple Mail app URL scheme for iOS
-              window.location.href = `message://%3C${encodeURIComponent(emailAddress)}%3E`;
-            } else {
-              // Fallback to Gmail web in new tab
-              const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}`;
-              window.open(gmailUrl, '_blank');
-            }
-          }, 500);
-        });
-      });
+      // Removed all email app specific JS and modal as per user request
     </script>
 
     <!-- Email app choice modal -->
-    <div id="emailAppModal" class="modal" style="display:none;">
-      <div class="modal-content" style="color:black; max-width: 300px;">
-        <span id="closeEmailModal" class="close-button" style="color:black;">&times;</span>
-        <p>Please select your mobile platform to open the email app:</p>
-        <button id="iosEmailBtn" style="margin: 10px; padding: 10px 20px; border-radius: 8px; border: none; background: #007aff; color: white; font-weight: bold;">iOS</button>
-        <button id="androidEmailBtn" style="margin: 10px; padding: 10px 20px; border-radius: 8px; border: none; background: #3ddc84; color: white; font-weight: bold;">Android</button>
-      </div>
-    </div>
+    <!-- Removed as per user request -->
 
     <script>
-      // Modal handling for email app choice
-      document.addEventListener('DOMContentLoaded', function () {
-        const emailLink = document.querySelector('a[aria-label="Send Email"]');
-        const modal = document.getElementById('emailAppModal');
-        const closeBtn = document.getElementById('closeEmailModal');
-        const iosBtn = document.getElementById('iosEmailBtn');
-        const androidBtn = document.getElementById('androidEmailBtn');
-
-        if (!emailLink || !modal || !closeBtn || !iosBtn || !androidBtn) return;
-
-        emailLink.addEventListener('click', function (e) {
-          const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-          if (!isMobile) return; // Normal behavior on non-mobile
-
-          e.preventDefault();
-          modal.style.display = 'block';
-        });
-
-        closeBtn.addEventListener('click', function () {
-          modal.style.display = 'none';
-        });
-
-        window.addEventListener('click', function (event) {
-          if (event.target == modal) {
-            modal.style.display = 'none';
-          }
-        });
-
-        iosBtn.addEventListener('click', function () {
-          const mailto = emailLink.getAttribute('href');
-          const emailAddress = mailto.replace('mailto:', '');
-          window.location.href = `message://%3C${encodeURIComponent(emailAddress)}%3E`;
-          modal.style.display = 'none';
-        });
-
-        androidBtn.addEventListener('click', function () {
-          const mailto = emailLink.getAttribute('href');
-          const emailAddress = mailto.replace('mailto:', '');
-          modal.style.display = 'none';
-
-          // Try to open Gmail app using iframe trick
-          const iframe = document.createElement('iframe');
-          iframe.style.display = 'none';
-          iframe.src = `googlegmail:///co?to=${encodeURIComponent(emailAddress)}`;
-          document.body.appendChild(iframe);
-
-          // Fallback: after 2 seconds, open Gmail web in new tab
-          setTimeout(() => {
-            document.body.removeChild(iframe);
-            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}`;
-            window.open(gmailUrl, '_blank');
-          }, 2000);
-        });
-      });
+      // Removed all email app specific JS and modal as per user request
     </script>
 
     <!-- Mobile About Toggle Script -->

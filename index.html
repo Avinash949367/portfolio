@@ -2230,9 +2230,8 @@ function toggleMenu() {
 
         androidBtn.addEventListener('click', function () {
           const mailto = emailLink.getAttribute('href');
-          const emailAddress = mailto.replace('mailto:', '');
-          // Use Android intent URL scheme for Gmail app
-          window.location.href = `intent://compose?to=${encodeURIComponent(emailAddress)}#Intent;package=com.google.android.gm;end`;
+          // Use mailto link directly for Android to open default email app
+          window.location.href = mailto;
           modal.style.display = 'none';
         });
       });
